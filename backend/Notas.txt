@@ -1,0 +1,49 @@
+instalar nodemodules. Posicionarse con la consola en el mismo directorio donde se encuentra el archivo package.json y ejecutar: npm install 
+
+Iniciar Servidor: npm run desarrollo
+
+Editar el archivo database.js con las credenciales de su motor de base de datos
+
+Estados
+1 - Pendiente 
+2 - Preparado
+3 - Despachado
+
+--------Endpoints
+
+Todas las localidades
+Metodo Get
+http://localhost:3000/api/localidad
+
+
+Todos los pedidos
+Metodo Get
+http://localhost:3000/api/pedido
+
+Todos los pedidos por localidad
+Metodo Get
+http://localhost:3000/api/pedido/busqueda/:idLocalidad
+
+Ejemplo:
+http://localhost:3000/api/pedido/busqueda/3
+
+
+Actualizar estado en el  pedido
+
+Metodo PUT
+http://localhost:3000/api/pedido
+
+Body:
+{
+"idEstado":2,
+"idPedido":1
+}
+
+
+---------Base de Datos
+
+Crear una base da datos con el nombre final2023
+
+Debe ser similar al diagrama.
+Si utilizan el siguiente scrip ejecutar uno por uno, sino pueden crear la base de datos a mano.
+

@@ -1,0 +1,59 @@
+CREATE TABLE `cliente` (
+  `idCliente` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT NULL,
+  `apellido` varchar(100) NOT NULL,
+    `telefono` varchar(100) NOT NULL,
+  PRIMARY KEY (`idCliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 
+
+
+INSERT INTO cliente (nombre, apellido, telefono) VALUES('Marcos', 'Peralta', '352444888');
+INSERT INTO cliente (nombre, apellido, telefono) VALUES('Matias', 'Lisandron', '352444888');
+INSERT INTO cliente (nombre, apellido, telefono) VALUES('Estefania', 'Gomes', '352444888');
+INSERT INTO cliente (nombre, apellido, telefono) VALUES('Lucia', 'Frias', '352444888');
+
+ -----------------------------------------
+
+CREATE TABLE `pedido` (
+  `idPedido` int NOT NULL AUTO_INCREMENT,
+  `idCliente` int NOT NULL,
+  `idLocalidad` int NOT NULL,
+  `idEstado` int NOT NULL,
+  `totalpedido` decimal NOT NULL,
+  PRIMARY KEY (`idPedido`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 
+
+
+INSERT INTO pedido (idCliente, idLocalidad, idEstado, totalpedido) VALUES(1, 1, 1, 280);
+INSERT INTO pedido (idCliente, idLocalidad, idEstado, totalpedido) VALUES(2, 4, 2, 900);
+INSERT INTO pedido (idCliente, idLocalidad, idEstado, totalpedido) VALUES(1, 2, 3, 1000);
+INSERT INTO pedido (idCliente, idLocalidad, idEstado, totalpedido) VALUES(2, 3, 1, 258);
+
+------------------------------------------------------------------
+
+CREATE TABLE `localidad` (
+  `idLocalidad` int NOT NULL AUTO_INCREMENT,
+  `nombreLocalidad`  varchar(100) NOT NULL,
+  PRIMARY KEY (`idLocalidad`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 
+
+INSERT INTO localidad (nombreLocalidad) VALUES('Villa Maria');
+INSERT INTO localidad (nombreLocalidad) VALUES('Villa Nueva');
+INSERT INTO localidad (nombreLocalidad) VALUES('Cordoba');
+INSERT INTO localidad (nombreLocalidad) VALUES('Pascanas');
+
+
+-----------------------------------------------
+
+CREATE TABLE `estadopedido` (
+  `idEstado` int NOT NULL AUTO_INCREMENT,
+  `nombreestado`  varchar(100) NOT NULL,
+  PRIMARY KEY (`idEstado`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 
+
+
+INSERT INTO estadopedido (nombreestado) VALUES('Pendiente');
+INSERT INTO estadopedido (nombreestado) VALUES('Preparado');
+INSERT INTO estadopedido (nombreestado) VALUES('Despachado');
+
+select * from estadopedido e 
